@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <ProgressBar
+        android:id="@+id/CircleProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/CancelButton" />
+
+    <TextView
+        android:id="@+id/PercentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/CircleProgressBar"
+        app:layout_constraintEnd_toStartOf="@+id/CircleProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/CircleProgressBar"
+        tools:text="1/200000" />
+
+    <Button
+        android:id="@+id/CancelButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:drawable/ic_menu_close_clear_cancel"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/CircleProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CircleProgressBar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.musicapp.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.musicapp.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.example.musicapp.library.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" >
+        <action
+            android:id="@+id/action_libraryFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playlistsFragment"
+        android:name="com.example.musicapp.playlist.ListPlaylist.PlaylistsFragment"
+        android:label="fragment_playlists"
+        tools:layout="@layout/fragment_playlists" >
+        <action
+            android:id="@+id/action_playlistsFragment_to_addPlaylistFragment"
+            app:destination="@id/addPlaylistFragment" />
+        <action
+            android:id="@+id/action_playlistsFragment_to_detailsPlaylistFragment"
+            app:destination="@id/detailsPlaylistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.example.musicapp.PlayerFragment"
+        android:label="fragment_player"
+        tools:layout="@layout/fragment_player" />
+    <fragment
+        android:id="@+id/addPlaylistFragment"
+        android:name="com.example.musicapp.playlist.AddPlaylist.addPlaylistFragment"
+        android:label="fragment_add_playlist"
+        tools:layout="@layout/fragment_add_playlist" >
+        <action
+            android:id="@+id/action_addPlaylistFragment_to_playlistsFragment"
+            app:destination="@id/playlistsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.example.musicapp.album.AlbumFragment"
+        android:label="fragment_album"
+        tools:layout="@layout/fragment_album">
+        <argument
+            android:name="album"
+            app:argType="com.example.musicapp.Album" />
+        <action
+            android:id="@+id/action_albumFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+        <action
+            android:id="@+id/action_albumFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistFragment"
+        android:name="com.example.musicapp.artist.ArtistFragment"
+        android:label="fragment_artist"
+        tools:layout="@layout/fragment_artist" >
+        <argument
+            android:name="artist"
+            app:argType="string" />
+        <argument
+            android:name="album"
+            app:argType="com.example.musicapp.Album" />
+        <action
+            android:id="@+id/action_artistFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addAlbumToPlaylistFragment"
+        android:name="com.example.musicapp.album.AddAlbumToPlaylistFragment"
+        android:label="fragment_add_album_to_playlist"
+        tools:layout="@layout/fragment_add_album_to_playlist" />
+    <fragment
+        android:id="@+id/detailsPlaylistFragment"
+        android:name="com.example.musicapp.playlist.DetailsPlaylist.DetailsPlaylistFragment"
+        android:label="fragment_details_playlist"
+        tools:layout="@layout/fragment_details_playlist" >
+        <argument
+            android:name="playlistId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailsPlaylistFragment_to_playlistsFragment"
+            app:destination="@id/playlistsFragment" />
+        <action
+            android:id="@+id/detailsGoToDownload"
+            app:destination="@id/playlistDownloadFragment"
+            app:popUpTo="@id/detailsPlaylistFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.musicapp.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/playlistDownloadFragment"
+        android:name="com.example.musicapp.playlist.PlaylistDownloadFragment"
+        android:label="PlaylistDownloadFragment" >
+        <argument
+            android:name="songs"
+            app:argType="com.example.musicapp.Song[]" />
+        <action
+            android:id="@+id/playlistDownloadGoBack"
+            app:popUpTo="@id/playlistDownloadFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

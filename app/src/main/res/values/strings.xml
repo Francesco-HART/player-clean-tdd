@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ca cest Rock !</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="welcome_message">Bienvenue dans l application</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_blank" />
+    <string name="button_login">Login</string>
+    <string name="listeners">%1$s listeners</string>
+    <string name="song_duration">%1$s mn</string>
+</resources>
